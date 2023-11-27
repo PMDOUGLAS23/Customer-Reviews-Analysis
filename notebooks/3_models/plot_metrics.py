@@ -156,10 +156,9 @@ def barplot_metric_mult(df, metric="accuracy", dtick=0.1):
 
 
 # Lineplot of models metrics scores
-def lineplot_metrics_mult(df):
+def lineplot_metrics(df):
     """line plots of models metrics score for comparison
-    1st plot : metrics in abciss and model are colors
-    2nd plot : models in adciss and metrics are colors
+    metrics in abciss and model are colors
     """
     data = df.set_index("model")
     fig = px.line(data.T, markers=True, title="Metrics x Models comparison")
@@ -167,6 +166,13 @@ def lineplot_metrics_mult(df):
     fig.add_hline(y=0.5, line_dash="dash", line_color="red")
     fig.show()
 
+
+# Lineplot of models metrics scores
+def lineplot_models_vs_metrics(df):
+    """line plots of models metrics score for comparison
+    models in adciss and metrics are colors
+    """
+    data = df.set_index("model")
     fig = px.line(data, markers=True, title="Models x Metrics comparison")
     fig.add_hline(y=0.5, line_dash="dash", line_color="red")
     fig.update_yaxes(tick0=0, dtick=0.1)
