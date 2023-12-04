@@ -1,11 +1,11 @@
 # functions to plots metrics of models from
 # a dataframe of metrics and models names
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
 import plotly.express as px
-
-import numpy as np
+from IPython.core.display import display, HTML
 
 
 # function to plot models metrics
@@ -84,12 +84,7 @@ def plot_radar_mult(df):
         )
     fig.update_layout(
         title="Metrics comparison",
-        polar=dict(
-            radialaxis=dict(
-                visible=True,
-                range=[0, 1],
-            )
-        ),
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
         width=600,
         height=600,
         showlegend=True,
@@ -170,7 +165,7 @@ def lineplot_metrics(df):
 # Lineplot of models metrics scores
 def lineplot_models_vs_metrics(df):
     """line plots of models metrics score for comparison
-    models in adciss and metrics are colors
+    models in abciss and metrics are colors
     """
     data = df.set_index("model")
     fig = px.line(data, markers=True, title="Models x Metrics comparison")
@@ -199,3 +194,186 @@ def stack_barplot(df, name1, name2):
         layout=go.Layout(title=name1 + " versus " + name2, yaxis_title="Value"),
     )
     fig.show()
+
+
+# function to plot stack barplot of 5 metrics
+def stack_mult_barplots(df, name1, name2, name3, name4, name5):
+    df = df.round(2)
+    fig = go.Figure(
+        data=[
+            go.Bar(
+                name=name1,
+                x=df["model"].to_list(),
+                y=df[name1].to_list(),
+                offsetgroup=0,
+                text=df[name1].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name2,
+                x=df["model"].to_list(),
+                y=df[name2].to_list(),
+                offsetgroup=1,
+                text=df[name2].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name3,
+                x=df["model"].to_list(),
+                y=df[name3].to_list(),
+                offsetgroup=2,
+                text=df[name3].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name4,
+                x=df["model"].to_list(),
+                y=df[name4].to_list(),
+                offsetgroup=3,
+                text=df[name4].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name5,
+                x=df["model"].to_list(),
+                y=df[name5].to_list(),
+                offsetgroup=4,
+                text=df[name5].to_list(),
+                textposition="auto",
+            ),
+        ],
+        layout=go.Layout(title="Models versus of metrics", yaxis_title="Value"),
+    )
+
+    fig.add_shape(
+        type="line",
+        xref="paper",
+        yref="paper",
+        x0=0,
+        y0=0.5,
+        x1=1,
+        y1=0.5,
+        line=dict(color="magenta", width=1, dash="dash"),
+    )
+
+    fig.show()
+
+
+# function to plot stack barplot of 5 metrics
+def barplot_model_vs_metrics_group(df, name1, name2, name3, name4, name5):
+    df = df.round(2)
+    fig = go.Figure(
+        data=[
+            go.Bar(
+                name=name1,
+                x=df["model"].to_list(),
+                y=df[name1].to_list(),
+                offsetgroup=0,
+                text=df[name1].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name2,
+                x=df["model"].to_list(),
+                y=df[name2].to_list(),
+                offsetgroup=1,
+                text=df[name2].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name3,
+                x=df["model"].to_list(),
+                y=df[name3].to_list(),
+                offsetgroup=2,
+                text=df[name3].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name4,
+                x=df["model"].to_list(),
+                y=df[name4].to_list(),
+                offsetgroup=3,
+                text=df[name4].to_list(),
+                textposition="auto",
+            ),
+            go.Bar(
+                name=name5,
+                x=df["model"].to_list(),
+                y=df[name5].to_list(),
+                offsetgroup=4,
+                text=df[name5].to_list(),
+                textposition="auto",
+            ),
+        ],
+        layout=go.Layout(title="Group barplot of Models Metrics", yaxis_title="Value"),
+    )
+
+    fig.add_shape(
+        type="line",
+        xref="paper",
+        yref="paper",
+        x0=0,
+        y0=0.5,
+        x1=1,
+        y1=0.5,
+        line=dict(color="magenta", width=1, dash="dash"),
+    )
+
+    fig.show()
+
+
+# function to plot stack barplot of 5 metrics
+# Group models on metrics
+def barplot_models_group_vs_metric(df, model_list):
+    # transpose and prepare df
+    dt = df.round(2)
+    dt = dt.set_index("model").T.reset_index()
+    dt.rename(columns={"index": "metric"}, inplace=True)
+
+    fig = go.Figure(
+        data=[
+            go.Bar(
+                name=name,
+                x=dt["metric"].to_list(),
+                y=dt[name].to_list(),
+                offsetgroup=i,
+                text=dt[name].to_list(),
+                textposition="auto",
+            )
+            for (i, name) in enumerate(model_list)
+        ],
+        layout=go.Layout(title="Group of models versus metrics", yaxis_title="Value"),
+    )
+    fig.add_shape(
+        type="line",
+        xref="paper",
+        yref="paper",
+        x0=0,
+        y0=0.5,
+        x1=1,
+        y1=0.5,
+        line=dict(color="magenta", width=1, dash="dash"),
+    )
+
+    fig.show()
+
+
+# function to visualize confusion matrix side by side
+
+
+def display_side_by_side(dfs: list, captions: list):
+    """Display tables side by side to save vertical space
+    Input:
+        dfs: list of pandas.DataFrame
+        captions: list of table captions
+    """
+    output = ""
+    combined = dict(zip(captions, dfs))
+    for caption, df in combined.items():
+        output += (
+            df.style.set_table_attributes("style='display:inline'")
+            .set_caption(caption)
+            ._repr_html_()
+        )
+        output += "\xa0\xa0\xa0"
+    display(HTML(output))
