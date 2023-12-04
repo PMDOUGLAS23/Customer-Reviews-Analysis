@@ -1,45 +1,57 @@
 Supply Chain - Satisfaction des clients
 ==============================
+**Objectifs du projet****
+- Prédire la satisfaction client à partir des commentaires. 
+- De ces commentaires, identifier les catégories de sujets problématiques 
+A partir des commentaires clients,  être capable d’automatiser une réponse
+Détection du sentiment client : positif, neutre ou négatif - à confirmer
 
-This repo is a Starting Pack for DS projects. You can rearrange the structure to make it fits your project.
 
 Project Organization
 ------------
-
-    ├── LICENSE
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data               <- Should be in your computer but not on Github (only in .gitignore)
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's name, and a short `-` delimited description, e.g.
-    │                         `1.0-alban-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, links, and all other explanatory materials.
-    │
-    ├── reports            <- The reports that you'll make during this project as PDF
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │   │   └── visualize.py
-
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Modèles
+    |--- 0_data_collection :
+    |        - 01_mdp_trustedshops_scraping_v1.0.ipynb
+    |       
+    |--- 1_eda_dataviz
+    |        - 01_mdp_eda_redoute_reviews_1.0.ipynb
+    |        - 02_mib_eda_redoute_suppliers_1.0.ipynb
+    |        - 02_mib_eda_statistics_test_redoute_suppliers_2.0.ipynb 
+    |        - 03_mdp_eda_redoute_reviews_nlp_1.0.ipynb
+    |  
+    |--- 2_prepro_feature_eng
+    |         - xxx
+    |         - xxx
+    |         - xxx 
+    |         - xx 
+    |--- 3_models
+    |      Modèle baseline : 
+    |         - 01_baselines_models_04.ipynb
+    |         - 01_baselines_multiclass_02.ipynb
+    |    
+    |--- Modèles Bag of Words
+    |        - 02_text_processing_0.0.ipynb
+    |        - 02_vectorization_clf_multiclass_0.1.ipynb
+    |        - 02_vectorization_cvz_clf_binary_0.4.ipynb
+    |        - 02_vectorization_nn_models_02.ipynb
+    |        - 02_vectorization_tfidf_clf_binary_0.4.ipynb
+    |        - 02_vectorization_tfidf_gridscv_clf_binary_0.4.ipynb
+    |    
+    |--- Réseaux de neurones récurrents GRU
+    |        - 03_Sentiment_analysis_with_RNN_04.ipynb
+    |        - 03_Text_Processing_for_RNN.ipynb
+    |    
+    |--- Analyse de sentiments TexBlob, Vader, Bert
+    |        - 04_Sentiment_Analysis_tb_vd_0.2.ipynb
+    |        - 04_Sentiment_analysis_BERT_0.0.ipynb
+    |    
+    |--- Topic Modeling
+    |        - 05_topic_modeling_de_BERTopic.ipynb
+    |        - 05_topic_modeling_gensim.0.0.ipynb
+    |   
+    |--- DataViz
+    |         - 06_dviz_models_performance_02.ipynb
+    |
+    |
+    |
+   
