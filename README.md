@@ -9,7 +9,7 @@ Détection du sentiment client : positif, neutre ou négatif - à confirmer
 
 Project Organization
 ------------
-Modèles
+
     --- 0_data_collection :
     
     |        - 01_mdp_trustedshops_scraping_v1.0.ipynb
