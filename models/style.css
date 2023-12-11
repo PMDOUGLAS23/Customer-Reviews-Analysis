@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: #2a4d69; 
+    font-size: 48px;
+    text-align: center;
+    border: 2px solid #2a4d69; 
+    padding: 10px;
+    display: inline-block; 
+    margin: 10px auto; 
+    transition: transform 0.3s ease; 
+}
+
+h1:hover {
+    transform: scale(1.1); /* Agrandit le titre de 10% lors du survol */
+}
+
+h2 {
+    color: #53788D; /* Un bleu légèrement plus clair */
+    font-size: 36px;
+    text-align: center;
+    background-color: #E7EFF6; /* Un fond légèrement bleuté pour le surlignage */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Transition douce pour la couleur et la taille de police */
+}
+
+h2:hover {
+    color: #2a4d69; /* Changement de couleur au survol */
+    font-size: 38px; /* Augmentation légère de la taille au survol */
+}
+
+
+
+
+
+
