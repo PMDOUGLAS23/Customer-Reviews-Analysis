@@ -22,12 +22,7 @@ Project Organization
     |        - 03_mdp_eda_redoute_reviews_nlp_1.0.ipynb
     |  
     
-    --- 2_prepro_feature_eng
-    |         - xxx
-    |         - xxx
-    |         - xxx 
-    |         - xx 
-    --- 3_models
+    --- 2_models
     |      Modèle baseline : 
     |         - 01_baselines_models_04.ipynb
     |         - 01_baselines_multiclass_02.ipynb
