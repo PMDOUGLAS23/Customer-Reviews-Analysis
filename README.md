@@ -11,7 +11,7 @@ Ce projet vise à :
 ## 🚀 Approches Adoptées
 
 ### 1️⃣ Modèles de Classification
-Utilisation de divers modèles pour prédire le sentiment client en se basant sur :
+Utilisation de divers modèles de classification standards pour prédire le sentiment client en se basant sur :
 - La longueur du commentaire.
 - Le titre.
 - La durée depuis la transaction.
