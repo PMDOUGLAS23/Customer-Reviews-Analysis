@@ -62,12 +62,8 @@ Un chatbot a été mis en place pour :
 
 ---
 
-## 📁 Structure du Projet
+## 📁 Organisation des Notebooks du projet
 
-
-
-Project Organization
-------------
 
     --- 0_data_collection :
     |
