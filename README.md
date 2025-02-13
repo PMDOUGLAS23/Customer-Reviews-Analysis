@@ -1,10 +1,69 @@
-Supply Chain - Satisfaction des clients
-==============================
-**Objectifs du projet****
-- Prédire la satisfaction client à partir des commentaires. 
-- De ces commentaires, identifier les catégories de sujets problématiques 
-A partir des commentaires clients,  être capable d’automatiser une réponse
-Détection du sentiment client : positif, neutre ou négatif
+# Analyse et Prédiction des Sentiments Clients
+
+## 📌 Objectif du Projet
+
+Ce projet vise à :
+- Prédire les notations des clients.
+- Catégoriser les commentaires.
+- Proposer des réponses automatiques.
+- Analyser les sentiments des avis clients.
+
+## 🚀 Approches Adoptées
+
+### 1️⃣ Modèles de Classification
+Utilisation de divers modèles pour prédire le sentiment client en se basant sur :
+- La longueur du commentaire.
+- Le titre.
+- La durée depuis la transaction.
+
+**Résultat :** Une régression logistique simple a montré des performances notables.
+
+### 2️⃣ Bag of Words avec TF-IDF et Count Vectorizer
+L’application du Bag of Words combiné avec TF-IDF et Count Vectorizer a permis une **bonne précision globale**.  
+Cependant, **des limitations subsistent** dans la prédiction des sentiments négatifs.
+
+### 3️⃣ Réseaux de Neurones Récurrents (GRU)
+Les **GRU** ont surpassé les modèles précédents, atteignant une **précision globale de plus de 91%**,  
+améliorant notamment la prédiction des **sentiments négatifs**.
+
+📌 **Note :** Le rééchantillonnage et la prise en compte du poids des classes ont été essentiels pour équilibrer les données.
+
+## 🔍 Analyse des Retours Fournisseurs
+Une approche parallèle a été adoptée, incluant :
+- **Feature engineering.**
+- **Recherche d'une trame standard.**
+- **Fine-tuning des modèles.**
+
+**Observation :** L’analyse a révélé des tendances spécifiques telles qu’une **standardisation des réponses**.
+
+## 🧠 Exploration des Sentiments
+Différentes techniques ont été testées :
+- **Word clouds** pour une première visualisation.
+- **BERT** pour capturer les nuances des sentiments.
+- **Modèles supervisés et semi-supervisés** comme Naïve Bayes et Topic Modeling.
+
+## 🤖 Intégration d’un Chatbot Interactif
+Un chatbot a été mis en place pour :
+- **Évaluer les sentiments des commentaires.**
+- **Présenter les quatre principaux sujets sous-jacents.**
+- **Faciliter l’analyse des avis clients.**
+
+## 📊 Résultats et Perspectives
+✔️ Un **système efficace** de prédiction des évaluations clients.  
+✔️ Une **interface interactive** pour exploiter les résultats.  
+✔️ **Améliorations possibles** : affiner les modèles et intégrer des analyses plus ciblées  
+  👉 Diriger automatiquement les commentaires vers les **départements concernés**.
+
+---
+
+📌 **Conclusion :** Ce projet met en évidence l'importance de l'IA dans l’analyse des sentiments clients et ouvre la voie à des améliorations continues pour optimiser la prise de décision.
+
+🚀 **Améliorations futures** : Affinement des paramètres et modélisation plus précise des sujets.
+
+---
+
+## 📁 Structure du Projet
+
 
 
 Project Organization
