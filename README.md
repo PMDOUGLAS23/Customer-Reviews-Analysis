@@ -4,7 +4,7 @@ Supply Chain - Satisfaction des clients
 - Prédire la satisfaction client à partir des commentaires. 
 - De ces commentaires, identifier les catégories de sujets problématiques 
 A partir des commentaires clients,  être capable d’automatiser une réponse
-Détection du sentiment client : positif, neutre ou négatif - à confirmer
+Détection du sentiment client : positif, neutre ou négatif
 
 
 Project Organization
